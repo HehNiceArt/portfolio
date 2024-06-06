@@ -3,11 +3,16 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
         <p>
-        Initial beginning of a portfolio.
+        <Info></Info>
         </p>
-      </header>
+    </div>
+  );
+}
+function Info() {
+  return (
+    <div>
+      <p>Initial beginning of a portfolio.</p>
     </div>
   );
 }
