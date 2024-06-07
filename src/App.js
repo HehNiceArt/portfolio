@@ -1,18 +1,10 @@
 import './App.css';
+import Images from './components/Images';
 
 function App() {
   return (
     <div className="App">
-        <p>
-        <Info></Info>
-        </p>
-    </div>
-  );
-}
-function Info() {
-  return (
-    <div>
-      <p>Initial beginning of a portfolio.</p>
+        <Images />
     </div>
   );
 }
