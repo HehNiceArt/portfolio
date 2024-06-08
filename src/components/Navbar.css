@@ -1,0 +1,94 @@
+body{
+    min-height: 100vh;
+}
+
+.App-header {
+    background-color: #FFF7ED;
+    display: -webkit-flex;
+    justify-content: space-between;
+    font-size: calc(10px + 2vmin);
+    color: rgb(0, 0, 0);
+    height: auto;
+    width: auto;
+    padding: 0;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+.App-header > ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 0 10px 0 10px;
+}
+.App-header > ul > li{
+    height: calc(10px + 10vh);
+    max-height: 50px;
+    padding: 0;
+}
+.App-header > ul > li > a {
+    height: 100%;
+    margin: 0 20px 0 0 !important;
+    font-size: calc(10px + 1vmin);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+    white-space: nowrap;
+}
+.App-header > ul > li > a > p{
+    margin: 0;
+    font-size: calc(10px + 1vh);
+}
+.App-header > ul > li > a:hover{
+    background-color: #f0f0ff;
+}
+.App-header > ul > li:first-child{
+    margin-right: auto;
+}
+.Sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    list-style: none;
+    top: 0;
+    width: 250px;
+    background-color: #fff7ed74;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.Sidebar > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+.Sidebar > li > a {
+    text-decoration: none;
+    font-size: calc(10px + 1vmin);
+    color: black;
+}
+.Sidebar > li:hover{
+    background-color: #f0f0ff;
+}
+
+@media (max-width: 950px) {
+   .hideOnMobile{
+    display: none;
+   } 
+}
+@media (max-width: 350px) {
+   .Sidebar{
+    width: 100%;
+   } 
+}
