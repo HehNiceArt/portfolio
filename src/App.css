@@ -14,12 +14,12 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #FFF7ED;
   display: -webkit-flex;
   flex-direction: column;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
   height: auto;
   width: auto;
   padding: 1% 2%;
@@ -60,9 +60,9 @@
 }
 .Menu-item {
   margin: 0 40px 0 0 !important;
-  font-size: calc(10px + 1vmin);
+  font-size: calc(9px + 1vmin);
   height: 100%;
-  list-style-type: "+";
+  list-style-type: "";
 }
 .Menu-top {
   display: flex;
@@ -70,6 +70,10 @@
   justify-content: space-between;
   padding: 0%;
   margin: 0%;
+}
+.Button-label {
+  margin: 0%;
+  padding: 0%;
 }
 .App-link {
   color: #61dafb;

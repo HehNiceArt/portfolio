@@ -1,5 +1,4 @@
 import './App.css';
-import Images from './components/Images';
 
 function App() {
   return (
@@ -7,6 +6,7 @@ function App() {
       <div className="App-header">
         <div className="Head-l">
           <p>HehNiceArt</p>
+        {/*TODO Choose a font!*/}
         <div className="Head-r">
           <ul className='Menu-top'>
           <li className='Menu-item'>
@@ -36,7 +36,7 @@ function App() {
             </li>
             <li className='Menu-item'>
               <div className='Item-label'>
-                Contact
+              Contact
               </div>
             </li>
           </ul>
