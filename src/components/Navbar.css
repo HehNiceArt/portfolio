@@ -20,7 +20,7 @@ body{
     justify-content: flex-end;
     align-items: center;
     margin: 0; 
-    padding: 0 10px 0 10px;
+    padding: 0 20px 0 20px;
 }
 .App-header > ul > li{
     height: calc(10px + 10vh);
@@ -30,7 +30,7 @@ body{
 .App-header > ul > li > a {
     height: 100%;
     margin: 0 20px 0 0 !important;
-    font-size: calc(10px + 1vmin);
+    font-size: 16px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@ body{
 }
 .App-header > ul > li > a > p{
     margin: 0;
-    font-size: calc(10px + 1vh);
+    font-size: 24px;
 }
 .App-header > ul > li > a:hover{
     background-color: #f0f0ff;
@@ -73,19 +73,29 @@ body{
     width: 100%;
     padding: 10px;
 }
+.Sidebar > li:first-child{
+    margin: 20px 0px 0px 0px;;
+}
 .Sidebar > li > a {
     text-decoration: none;
-    font-size: calc(10px + 1vmin);
+    /*TODO fix scaling issue when window width is reduced*/
+    /*font-size: calc(10px + 1vmin);*/
+    font-size: 16px;
     color: black;
 }
 .Sidebar > li:hover{
     background-color: #f0f0ff;
 }
-
+.Hamburger {
+    display: none;
+}
 @media (max-width: 950px) {
    .hideOnMobile{
     display: none;
    } 
+   .Hamburger{
+    display: flex;
+   }
 }
 @media (max-width: 350px) {
    .Sidebar{
