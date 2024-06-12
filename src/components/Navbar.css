@@ -1,4 +1,4 @@
-body{
+body {
     min-height: 100vh;
 }
 
@@ -11,23 +11,32 @@ body{
     height: auto;
     width: auto;
     padding: 0;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0px;
+    z-index: 1;
 }
-.App-header > ul{
+
+.App-header>ul {
     width: 100%;
     list-style: none;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin: 0; 
+    margin: 0;
     padding: 0 20px 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
-.App-header > ul > li{
+
+.App-header>ul>li {
     height: calc(10px + 10vh);
     max-height: 50px;
     padding: 0;
 }
-.App-header > ul > li > a {
+
+.App-header>ul>li>a {
     height: 100%;
     margin: 0 20px 0 0 !important;
     font-size: 16px;
@@ -37,16 +46,20 @@ body{
     color: black;
     white-space: nowrap;
 }
-.App-header > ul > li > a > p{
+
+.App-header>ul>li>a>p {
     margin: 0;
     font-size: 24px;
 }
-.App-header > ul > li > a:hover{
+
+.App-header>ul>li>a:hover {
     background-color: #f0f0ff;
 }
-.App-header > ul > li:first-child{
+
+.App-header>ul>li:first-child {
     margin-right: auto;
 }
+
 .Sidebar {
     position: fixed;
     top: 0;
@@ -66,39 +79,48 @@ body{
     align-items: flex-start;
     justify-content: flex-start;
 }
-.Sidebar > li {
+
+.Sidebar>li {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 10px;
 }
-.Sidebar > li:first-child{
-    margin: 20px 0px 0px 0px;;
+
+.Sidebar>li:first-child {
+    margin: 20px 0px 0px 0px;
+    ;
 }
-.Sidebar > li > a {
+
+.Sidebar>li>a {
     text-decoration: none;
     /*TODO fix scaling issue when window width is reduced*/
     /*font-size: calc(10px + 1vmin);*/
     font-size: 16px;
     color: black;
 }
-.Sidebar > li:hover{
+
+.Sidebar>li:hover {
     background-color: #f0f0ff;
 }
+
 .Hamburger {
     display: none;
 }
+
 @media (max-width: 950px) {
-   .hideOnMobile{
-    display: none;
-   } 
-   .Hamburger{
-    display: flex;
-   }
+    .hideOnMobile {
+        display: none;
+    }
+
+    .Hamburger {
+        display: flex;
+    }
 }
+
 @media (max-width: 350px) {
-   .Sidebar{
-    width: 100%;
-   } 
+    .Sidebar {
+        width: 100%;
+    }
 }

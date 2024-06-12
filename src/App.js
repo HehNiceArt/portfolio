@@ -1,11 +1,16 @@
 import './App.css';
 import NavigationBar from './components/Navbar';
-import Content from './components/Content'
+import Content from './components/Content';
+
 function App() {
   return (
     <div className="App">
-      <NavigationBar />
-      <Content />
+      <header className='Navbar'>
+        <NavigationBar />
+      </header>
+      <body>
+        <Content />
+      </body>
     </div>
   );
 }
