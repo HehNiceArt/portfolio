@@ -3,7 +3,7 @@ body {
 }
 
 .App-header {
-    background-color: #FFF7ED;
+    background-color: #DDE7F2;
     display: -webkit-flex;
     justify-content: space-between;
     font-size: calc(10px + 2vmin);
@@ -11,12 +11,10 @@ body {
     height: auto;
     width: auto;
     padding: 0;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0px;
     z-index: 1;
 }
-
 .App-header>ul {
     width: 100%;
     list-style: none;
@@ -24,7 +22,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     margin: 0;
-    padding: 0 20px 0 20px;
+    padding: 0 50px 0 50px;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -53,7 +51,7 @@ body {
 }
 
 .App-header>ul>li>a:hover {
-    background-color: #f0f0ff;
+    /*background-color: #f0f0ff;*/
 }
 
 .App-header>ul>li:first-child {
@@ -70,10 +68,9 @@ body {
     list-style: none;
     top: 0;
     width: 250px;
-    background-color: #fff7ed74;
+    background-color: #dde7f280;
     z-index: 999;
     backdrop-filter: blur(5px);
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
     display: none;
     flex-direction: column;
     align-items: flex-start;
