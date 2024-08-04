@@ -1,11 +1,10 @@
 import React from "react";
 import './Content.css';
 
-function ContentBody()
-{
-    return(
+function ContentBody() {
+    return (
         <div>
-            <p>Beginnings of a portfolio</p>
+            <p>HehNiceArt</p>
         </div>
     )
 }
