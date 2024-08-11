@@ -10,7 +10,7 @@ function ContentBody() {
             try {
                 const response = await fetch('http://localhost:3001/api/posts/latest');
                 const text = await response.text(); // Get the response as text
-                console.log('Raw Response:', text); // Log the raw response
+                console.log('Latest Image:', text); // Log the raw response
 
                 // Check if the response is valid JSON
                 try {
