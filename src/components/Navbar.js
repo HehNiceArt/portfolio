@@ -1,12 +1,12 @@
 import React from 'react'
 import './Navbar.css'
 
-function NavigationBar () {
-  function ShowSidebar () {
+function NavigationBar() {
+  function ShowSidebar() {
     const sidebar = document.querySelector('.Sidebar')
     sidebar.style.display = 'flex'
   }
-  function HideSidebar () {
+  function HideSidebar() {
     const sidebar = document.querySelector('.Sidebar')
     sidebar.style.display = 'none'
   }
@@ -27,59 +27,29 @@ function NavigationBar () {
               </svg>
             </a>
           </li>
-          <li>
-            <a href='#'>Who is Nice?</a>
-          </li>
-          <li>
-            <a href='#'>Illustrations</a>
-          </li>
-          <li>
-            <a href='#'>Animations</a>
-          </li>
-          <li>
-            <a href='#'>Live2D Rigs</a>
-          </li>
-          <li>
-            <a href='#'>Game Projects</a>
-          </li>
-          <li>
-            <a href='#'>World</a>
-          </li>
-          <li>
-            <a href='#'>Contact</a>
-          </li>
+          <li><a href='#'>Who is Nice?</a></li>
+          <li><a href='#'>Illustrations</a></li>
+          <li><a href='#'>Animations</a></li>
+          <li><a href='#'>Live2D Rigs</a></li>
+          <li><a href='#'>Game Projects</a></li>
+          <li><a href='#'>World</a></li>
+          <li><a href='#'>Contact</a></li>
         </ul>
       </nav>
       <nav className='App-header'>
         <ul>
           <li>
             <a>
-              <p>
-                <strong>HehNiceArt</strong>
-              </p>
+              <p><strong>HehNiceArt</strong></p>
             </a>
           </li>
-          <li className='hideOnMobile'>
-            <a href='#'>Who is Nice?</a>
-          </li>
-          <li className='hideOnMobile'>
-            <a href='#'>Illustrations</a>
-          </li>
-          <li className='hideOnMobile'>
-            <a href='#'>Animations</a>
-          </li>
-          <li className='hideOnMobile'>
-            <a href='#'>Live2D Rigs</a>
-          </li>
-          <li className='hideOnMobile'>
-            <a href='#'>Game Projects</a>
-          </li>
-          <li className='hideOnMobile'>
-            <a href='#'>World</a>
-          </li>
-          <li className='hideOnMobile'>
-            <a href='#'>Contact</a>
-          </li>
+          <li className='hideOnMobile'><a href='#'>Who is Nice?</a></li>
+          <li className='hideOnMobile'><a href='#'>Illustrations</a></li>
+          <li className='hideOnMobile'><a href='#'>Animations</a></li>
+          <li className='hideOnMobile'><a href='#'>Live2D Rigs</a></li>
+          <li className='hideOnMobile'><a href='#'>Game Projects</a></li>
+          <li className='hideOnMobile'><a href='#'>World</a></li>
+          <li className='hideOnMobile'><a href='#'>Contact</a></li>
           <li onClick={ShowSidebar} className='Hamburger'>
             <a href='#'>
               <svg
