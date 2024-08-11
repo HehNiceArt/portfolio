@@ -21,7 +21,7 @@ router.get('/latest', async (req, res) => {
         if (!latestPost) {
             return res.status(404).json({ message: 'No posts found' });
         }
-        res.json({ imageUrl: latestPost.imageUrl });
+        res.json({ title: latestPost.title, imageUrl: latestPost.imageUrl });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -32,7 +32,6 @@ router.get('/', async (req, res) => {
     try {
         //const posts = await Post.find({}, '_id title description').exec();
         const posts = await Post.find();
-        console.log('Retrieved posts: ', posts)
         if (posts.length === 0) {
             return res.status(404).json({ message: 'No posts found' });
         }
