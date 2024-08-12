@@ -8,9 +8,9 @@ function App() {
       <header className='Navbar'>
         <NavigationBar />
       </header>
-      <body>
+      <div>
         <Content />
-      </body>
+      </div>
     </div>
   );
 }

@@ -4,6 +4,8 @@ import './Content.css';
 
 function ContentBody() {
     const [latestImage, setLatestImage] = useState('');
+    const [description, setDescription] = useState('');
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const fetchLatestImage = async () => {
@@ -16,6 +18,7 @@ function ContentBody() {
                 try {
                     const data = JSON.parse(text); // Parse the text as JSON
                     setLatestImage(data.imageUrl);
+                    setDescription(data.description);
                 } catch (jsonError) {
                     console.error('JSON parsing error:', jsonError);
                     console.error('Response was not valid JSON:', text);
@@ -24,12 +27,17 @@ function ContentBody() {
                 console.error('Error fetching the latest image: ', error);
             }
         };
-
         fetchLatestImage();
+
+        const checkIfMobile = () => {
+            setIsMobile(/Mobi|Android/i.test(navigator.userAgent));
+        }
+        checkIfMobile();
+        console.log('Is Mobile: ', isMobile);
     }, []);
     return (
-        <div className="flex-container">
-            {latestImage && <img src={latestImage} alt="Description" className="flex-image"></img>}
+        <div className={`flex-container ${isMobile ? 'mobile' : ''}`}>
+            {latestImage && <img src={latestImage} alt={description} className="flex-image"></img>}
             <div className="flex-text">
                 <h1 className="large-title">HehNiceArt</h1>
                 <p className="fancy">it's my name.</p>
