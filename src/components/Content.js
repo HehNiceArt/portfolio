@@ -41,7 +41,7 @@ function ContentBody() {
             <div className="flex-text">
                 <h1 className="large-title">HehNiceArt</h1>
                 <p className="fancy">it's my name.</p>
-                <p className="fancy">/access.log_*</p>
+                <div className="blink"><p className="fancy">/access.log_*</p></div>
                 <li className="links"><a href="#">Who is Nice?</a></li>
                 <li className="links"><a href="#">Illustrations</a></li>
                 <li className="links"><a href="#">Animations</a></li>

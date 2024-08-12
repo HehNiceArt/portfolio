@@ -1,20 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Navbar.css'
 
 function NavigationBar() {
-  function ShowSidebar() {
-    const sidebar = document.querySelector('.Sidebar')
-    sidebar.style.display = 'flex'
-  }
-  function HideSidebar() {
-    const sidebar = document.querySelector('.Sidebar')
-    sidebar.style.display = 'none'
-  }
+  const [isSidebarVisible, setSidebarVisible] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarVisible(!isSidebarVisible);
+  };
+
+  const handleResize = () => {
+    if (window.innerWidth > 950) {
+      setSidebarVisible(false); // Hide sidebar if width exceeds 950px
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize); // Cleanup on unmount
+    };
+  }, []);
+
   return (
     <div>
       <nav>
-        <ul className='Sidebar'>
-          <li onClick={HideSidebar}>
+        <ul className={`Sidebar ${isSidebarVisible ? 'active' : ''}`}>
+          <li onClick={toggleSidebar}>
             <a href='#'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -50,7 +61,7 @@ function NavigationBar() {
           <li className='hideOnMobile'><a href='#'>Game Projects</a></li>
           <li className='hideOnMobile'><a href='#'>World</a></li>
           <li className='hideOnMobile'><a href='#'>Contact</a></li>
-          <li onClick={ShowSidebar} className='Hamburger'>
+          <li onClick={toggleSidebar} className='Hamburger'>
             <a href='#'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
