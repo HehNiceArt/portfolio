@@ -25,13 +25,14 @@
     z-index: 1;
 }
 
-.App-header>ul>li {
+.title-cover {
     height: calc(10px + 10vh);
     max-height: 50px;
     padding: 0;
+    margin-right: auto;
 }
 
-.App-header>ul>li>a {
+.nav-links {
     height: 100%;
     margin: 0 50px 0 0 !important;
     font-size: 16px;
@@ -42,18 +43,27 @@
     white-space: nowrap;
 }
 
-.App-header>ul>li>a>p {
+.title {
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+    white-space: nowrap;
     margin: 0;
     font-size: 24px;
 }
 
-.App-header>ul>li>a:hover {
-    background-color: #f0f0ff;
+.title:hover {
+    cursor: default;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
 }
 
-.App-header>ul>li:first-child {
-    margin-right: auto;
-}
 
 .Sidebar {
     position: fixed;
@@ -85,29 +95,22 @@
     /* Fade in */
 }
 
-.Sidebar>li {
+.sidebar-links {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 10px;
+    padding: 15px 10px 15px 10px;
+    width: auto;
 }
 
-.Sidebar>li:first-child {
-    margin: 20px 0px 0px 0px;
-    ;
+.cross {
+    margin: 30px 0px 0px 0px;
 }
 
 .Sidebar>li>a {
     text-decoration: none;
-    /*TODO fix scaling issue when window width is reduced*/
-    /*font-size: calc(10px + 1vmin);*/
     font-size: 16px;
     color: black;
-}
-
-.Sidebar>li:hover {
-    background-color: #8282c4;
 }
 
 .Hamburger {
