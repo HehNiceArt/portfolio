@@ -6,6 +6,11 @@ function ContentBody() {
     const [latestImage, setLatestImage] = useState('');
     const [description, setDescription] = useState('');
     const [isMobile, setIsMobile] = useState(false);
+    const [showLinks, setShowLinks] = useState(false);
+
+    const toggleLinks = () => {
+        setShowLinks(prev => !prev);
+    }
 
     useEffect(() => {
         const fetchLatestImage = async () => {
@@ -33,7 +38,6 @@ function ContentBody() {
             setIsMobile(/Mobi|Android/i.test(navigator.userAgent));
         }
         checkIfMobile();
-        console.log('Is Mobile: ', isMobile);
     }, []);
     return (
         <div className={`flex-container ${isMobile ? 'mobile' : ''}`}>
@@ -41,14 +45,20 @@ function ContentBody() {
             <div className="flex-text">
                 <h1 className="large-title">HehNiceArt</h1>
                 <p className="fancy">it's my name.</p>
-                <div className="blink"><p className="fancy">/access.log_*</p></div>
-                <li className="links"><a href="#">Who is Nice?</a></li>
-                <li className="links"><a href="#">Illustrations</a></li>
-                <li className="links"><a href="#">Animations</a></li>
-                <li className="links"><a href="#">Live2D Rigs</a></li>
-                <li className="links"><a href="#">Game Projects</a></li>
-                <li className="links"><a href="#">World</a></li>
-                <li className="links"><a href="#">Contact</a></li>
+                <div onClick={toggleLinks}><p className="fancy">/<span className="blink">access.log_*</span></p></div>
+                <div className={`link-container ${showLinks ? 'show' : ''}`}>{ }
+                    {showLinks && (
+                        <>
+                            <li className="links"><a href="#">Who is Nice?</a></li>
+                            <li className="links"><a href="#">Illustrations</a></li>
+                            <li className="links"><a href="#">Animations</a></li>
+                            <li className="links"><a href="#">Live2D Rigs</a></li>
+                            <li className="links"><a href="#">Game Projects</a></li>
+                            <li className="links"><a href="#">World</a></li>
+                            <li className="links"><a href="#">Contact</a></li>
+                        </>
+                    )}
+                </div>
             </div>
         </div>
     )

@@ -91,8 +91,32 @@
 }
 
 .blink {
-    animation: blink 3s linear infinite;
+    animation: blink 1.2s linear infinite;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
 }
+
+.blink:hover {
+    cursor: pointer;
+}
+
+.link-container {
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.7s ease, opacity 0.5s ease;
+}
+
+.link-container.show {
+    max-height: 400px;
+    opacity: 1;
+    transition: max-height 0.7s ease, opacity 0.5s ease;
+}
+
 
 @keyframes blink {
 
