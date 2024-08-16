@@ -28,6 +28,10 @@
 }
 
 @media (max-width: 950px) {
+    .flex-container {
+        padding-right: 50px;
+    }
+
     .flex-padd {
         flex-direction: column;
         align-items: center;
@@ -40,7 +44,6 @@
     .flex-image {
         margin-right: 0px !important;
         margin-bottom: 30px;
-        min-width: 350px;
         min-height: 350px;
         width: min(400px, 90%) !important;
         height: min(500px, 90%) !important;

@@ -14,7 +14,6 @@
 }
 
 .YW-TextContainer {
-    width: 100%;
     display: flex;
     flex-direction: column;
     margin-right: 50px;
@@ -95,18 +94,28 @@
 
 @media (max-width: 950px) {
     .YW-Panel {
-        width: min(450px, 100%);
+        width: 20px;
+        margin: 0 50px 50px 50px;
         align-items: center;
-        min-width: 450px;
+        min-width: 300px !important;
     }
 
     .YW-Panel:hover .YW-ImageContainer {
-        /*width: calc(100% - 300px);*/
-        width: min(400px, 100%);
+        width: min(300px, 100%);
         height: min(400px, 100%);
         transition: width 0.3s ease, height 0.3s ease;
+        margin-left: auto;
+        margin-right: auto;
 
         /*height: 100%;*/
+    }
+
+    .YW-Panel:hover .YW-listContainer>li {
+        width: 200px;
+    }
+
+    .YW-Year {
+        font-size: 32px;
     }
 
     .YW-TextContainer {
@@ -118,12 +127,22 @@
         max-width: 400px;
     }
 
+    .YW-listContainer>li {
+        width: 200px;
+    }
+
     .YW-listContent {
-        width: min(400px, 100%);
+        width: min(270px, 100%);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         min-width: 200px;
+        transition: width 0.3s ease;
+    }
+
+    .YW-Panel:hover .YW-listContent {
+        width: min(400px, 100%);
+        transition: width 0.3s ease;
     }
 
     .YW-ContentContainer {
