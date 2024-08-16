@@ -18,8 +18,8 @@
 }
 
 .flex-image:hover {
-    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2),
-        -10px -10px 10px white;
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
+        -10px -10px 10px rgb(234, 238, 239);
 }
 
 .flex-container.mobile {
@@ -39,8 +39,8 @@
     .flex-image {
         margin-right: 0px !important;
         margin-bottom: 30px;
-        width: min(500px, 90%) !important;
-        height: min(500px, 90%);
+        min-width: 350px;
+        min-height: 350px;
         object-fit: cover;
         border-radius: 10px;
     }
@@ -59,7 +59,7 @@
 
 .flex-image {
     width: min(500px, 90%);
-    height: 500px;
+    height: min(500px, 90%);
     margin-right: 100px;
     object-fit: cover;
     border-radius: 10px;

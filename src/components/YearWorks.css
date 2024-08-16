@@ -1,0 +1,143 @@
+.YW-Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.YW-Header {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 0px 0px 50px 0px;
+}
+
+.YW-TextContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    height: auto;
+    justify-content: start;
+}
+
+.YW-Panel {
+    display: flex;
+    width: calc(100% - 500px);
+    border-radius: 10px;
+    height: auto;
+    flex-direction: column;
+    background-color: #D0DDEC;
+    justify-content: flex-start;
+    margin: 0 50px 50px 50px;
+    transition: box-shadow 0.3s ease, width 0.3s ease, height 0.3s ease;
+    box-sizing: border-box;
+    text-align: start;
+    min-height: 150px;
+    min-width: 750px;
+    padding: 20px 20px 20px 20px;
+}
+
+.YW-ContentContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.YW-ImageContainer {
+    width: min(200px, 90%);
+    height: min(200px, 90%);
+    object-fit: cover;
+    border-radius: 10px;
+    display: flex;
+    min-width: 100px;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.YW-Panel:hover {
+    width: calc(100% - 300px);
+    height: calc(100% + 300px);
+    background-color: rgba(144, 176, 213, 0.3);
+    backdrop-filter: blur(100px);
+    border-radius: 10px;
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
+        -10px -10px 10px rgb(234, 238, 239);
+    position: relative;
+    z-index: 1;
+}
+
+.YW-Year {
+    font-size: 48px;
+    color: #656CAF;
+    width: 200px;
+    font-weight: bold;
+    padding: 0px 0px 5px 0px;
+}
+
+.YW-list {
+    padding-left: 30px;
+}
+
+.YW-listContainer {
+    color: #656CAF;
+}
+
+.YW-listContent {
+    width: auto;
+    max-width: 500px;
+    margin: 5px 0 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 950px) {
+    .YW-Panel {
+        width: min(450px, 100%);
+        align-items: center;
+        min-width: 450px;
+    }
+
+    .YW-Panel:hover .YW-ImageContainer {
+        /*width: calc(100% - 300px);*/
+        width: min(400px, 100%);
+        height: min(400px, 100%);
+        transition: width 0.3s ease, height 0.3s ease;
+
+        /*height: 100%;*/
+    }
+
+    .YW-TextContainer {
+        margin: 0;
+        height: 100%;
+    }
+
+    .YW-list {
+        max-width: 400px;
+    }
+
+    .YW-listContent {
+        width: min(400px, 100%);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-width: 200px;
+    }
+
+    .YW-ContentContainer {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+
+    .YW-ImageContainer {
+        width: min(200px, 90%);
+        height: min(200px, 90%);
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        transition: width 0.3s ease, height 0.3s ease;
+    }
+
+}
