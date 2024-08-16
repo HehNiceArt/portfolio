@@ -1,12 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .flex-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: min(950px, 90%);
-    padding: 10px;
-    height: calc(100% + 100px) !important;
-    padding-left: 50px;
+    align-items: flex-start;
+    width: auto;
+    padding: 100px 10px 10px 50px;
+    height: auto !important;
     flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .flex-image:hover {
@@ -23,13 +31,14 @@
     .flex-container {
         flex-direction: column;
         align-items: center;
-        width: min(950px, 90%);
-        padding: 0;
+        width: auto;
+        padding: 100px 0 0 0;
+
     }
 
     .flex-image {
         margin-right: 0px !important;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         width: min(500px, 90%) !important;
         height: min(500px, 90%);
         object-fit: cover;
@@ -54,14 +63,21 @@
     margin-right: 100px;
     object-fit: cover;
     border-radius: 10px;
+    display: flex;
+    align-items: start;
     transition: box-shadow 0.3s ease;
 }
 
 .flex-text {
     display: flex;
-    height: 500px;
-    width: 500px;
+    height: auto;
+    width: auto;
     align-items: flex-start;
+    flex-direction: column;
+}
+
+.links-text {
+    display: flex;
     flex-direction: column;
 }
 
@@ -88,6 +104,10 @@
 .fancy {
     color: #828282;
     padding: 1rem 0 1rem 0;
+}
+
+.slash {
+    cursor: pointer;
 }
 
 .blink {

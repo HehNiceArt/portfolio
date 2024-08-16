@@ -1,16 +1,14 @@
 import './App.css';
 import NavigationBar from './components/Navbar';
 import Content from './components/Content';
+import News from './components/News'
 
 function App() {
   return (
     <div className="App">
-      <header className='Navbar'>
-        <NavigationBar />
-      </header>
-      <div>
-        <Content />
-      </div>
+      <NavigationBar />
+      <Content />
+      <News />
     </div>
   );
 }

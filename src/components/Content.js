@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import './Flexbox.css'
-import './Content.css';
 
 function ContentBody() {
     const [latestImage, setLatestImage] = useState('');
@@ -42,22 +41,26 @@ function ContentBody() {
     return (
         <div className={`flex-container ${isMobile ? 'mobile' : ''}`}>
             {latestImage && <img src={latestImage} alt={description} className="flex-image"></img>}
-            <div className="flex-text">
-                <h1 className="large-title">HehNiceArt</h1>
-                <p className="fancy">it's my name.</p>
-                <div onClick={toggleLinks}><p className="fancy">/<span className="blink">access.log_*</span></p></div>
-                <div className={`link-container ${showLinks ? 'show' : ''}`}>{ }
-                    {showLinks && (
-                        <>
-                            <li className="links"><a href="#">Who is Nice?</a></li>
-                            <li className="links"><a href="#">Illustrations</a></li>
-                            <li className="links"><a href="#">Animations</a></li>
-                            <li className="links"><a href="#">Live2D Rigs</a></li>
-                            <li className="links"><a href="#">Game Projects</a></li>
-                            <li className="links"><a href="#">World</a></li>
-                            <li className="links"><a href="#">Contact</a></li>
-                        </>
-                    )}
+            <div className="flex-column">
+                <div className="flex-text">
+                    <h1 className="large-title">HehNiceArt</h1>
+                    <p className="fancy">it's my name.</p>
+                    <div onClick={toggleLinks}><p className="fancy"><span className="slash">/</span><span className="blink">access.log_*</span></p></div>
+                </div>
+                <div className="links-text">
+                    <div className={`link-container ${showLinks ? 'show' : ''}`}>{ }
+                        {showLinks && (
+                            <>
+                                <li className="links"><a href="#">Who is Nice?</a></li>
+                                <li className="links"><a href="#">Illustrations</a></li>
+                                <li className="links"><a href="#">Animations</a></li>
+                                <li className="links"><a href="#">Live2D Rigs</a></li>
+                                <li className="links"><a href="#">Game Projects</a></li>
+                                <li className="links"><a href="#">World</a></li>
+                                <li className="links"><a href="#">Contact</a></li>
+                            </>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

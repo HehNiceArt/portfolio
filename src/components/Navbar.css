@@ -1,42 +1,31 @@
 .App-header {
     background-color: #DDE7F2;
-    display: -webkit-flex;
-    justify-content: space-between;
-    font-size: calc(10px + 2vmin);
-    color: rgb(0, 0, 0);
-    height: auto;
-    width: auto;
-    padding: 0;
-    position: sticky;
-    top: 0px;
-    z-index: 1;
-}
-
-.App-header>ul {
-    width: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0;
-    padding: 0 50px 0 50px;
     position: sticky;
     top: 0;
-    z-index: 1;
+    padding: 0 50px 0 50px;
+    z-index: 1000;
+}
+
+.list {
+    list-style: none;
+    display: flex;
 }
 
 .title-cover {
     height: calc(10px + 10vh);
     max-height: 50px;
     padding: 0;
+    left: 0;
+    top: 0;
+    position: inherit;
     margin-right: auto;
 }
 
 .nav-links {
     height: 100%;
-    margin: 0 50px 0 0 !important;
     font-size: 16px;
     text-decoration: none;
+    margin-right: 25px;
     display: flex;
     align-items: center;
     color: black;
@@ -75,7 +64,7 @@
     list-style: none;
     width: 250px;
     background-color: #dde7f280;
-    z-index: 999;
+    z-index: 2000;
     backdrop-filter: blur(5px);
     transform: translateX(100%);
     /* Start off-screen */
@@ -124,6 +113,7 @@
 
     .Hamburger {
         display: flex;
+        align-items: center;
     }
 }
 
