@@ -1,0 +1,66 @@
+.Footer-Container {
+    display: flex;
+    height: 25vh;
+    padding: 0 50px 0 50px;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.Footer-Head {
+    display: flex;
+    width: 100%;
+}
+
+.Footer-Title {
+    display: flex;
+    height: auto;
+    font-size: 24px;
+    margin-right: auto;
+}
+
+.Socmed-Links {
+    overflow: hidden;
+    list-style: none;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.Footer-Contents {
+    display: flex;
+    width: auto;
+}
+
+.Socmed-Links>a {
+    margin-right: 25px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
+
+.Footer-Copyright {
+    height: auto;
+    display: flex;
+    margin: 90px auto 20px auto;
+}
+
+.Footer-CopyrightText {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+}
+
+.Footer-CopyrightText>p {
+    color: #828282;
+    padding: 2px 0 3px 0;
+}
+
+.F-fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.F-fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
