@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './YearWorks.css'
 import testImage from '../assets/Kohana Yumi.jpg'
 
 function YearWorks() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const top = window.scrollY;
+            setIsVisible(top > 600); // Adjust the scroll position as needed
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <div className="YW-Container">
-            <div className="YW-Header">WORKS</div>
-            <div className="YW-Panel">
+            <div className={`YW-Header ${isVisible ? 'fade-in' : 'fade-out'}`}>WORKS</div>
+            <div className={`YW-Panel ${isVisible ? 'fade-in' : 'fade-out'}`}>
                 <div className="YW-ContentContainer">
                     <div className="YW-TextContainer">
                         <div className="YW-Year">2024</div>
@@ -21,7 +33,7 @@ function YearWorks() {
                     <img src={testImage} className="YW-ImageContainer"></img>
                 </div>
             </div>
-            <div className="YW-Panel">
+            <div className={`YW-Panel ${isVisible ? 'fade-in' : 'fade-out'}`}>
                 <div className="YW-ContentContainer">
                     <div className="YW-TextContainer">
                         <div className="YW-Year">2023</div>
