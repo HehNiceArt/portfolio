@@ -1,5 +1,5 @@
 {
-  "homepage": "http://HehNiceArt.github.io/portfolio",
+  "homepage": "http://localhost:3000",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,

@@ -43,15 +43,15 @@ function NavigationBar() {
         <nav className='hideOnMobile'><Link className="nav-links" to='/GameProjects'>Game Projects</Link></nav>
         <nav className='hideOnMobile'><Link className="nav-links" to='/World'>World</Link></nav>
         <nav className='hideOnMobile'><Link className="nav-links" to='/Contact'>Contact</Link></nav>
-      </div>
 
-      <li onClick={toggleSidebar} className='Hamburger'>
-        <a href='#'>
-          <svg xmlns='http://www.w3.org/2000/svg' height='22px' viewBox='0 -960 960 960' width='22px' fill='#000000'>
-            <path d='M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z' />
-          </svg>
-        </a>
-      </li>
+        <li onClick={toggleSidebar} className='Hamburger'>
+          <a href='#'>
+            <svg xmlns='http://www.w3.org/2000/svg' height='22px' viewBox='0 -960 960 960' width='22px' fill='#000000'>
+              <path d='M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z' />
+            </svg>
+          </a>
+        </li>
+      </div>
       <nav>
         <ul className={`Sidebar ${isSidebarVisible ? 'active' : ''}`}>
           <li className="cross" onClick={toggleSidebar}>
