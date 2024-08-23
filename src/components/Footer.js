@@ -6,7 +6,7 @@ function Footer() {
     useEffect(() => {
         const handleScroll = () => {
             const top = window.scrollY;
-            setIsVisible(top > 1300);
+            setIsVisible(top > 1200);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
