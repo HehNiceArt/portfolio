@@ -2,17 +2,8 @@ import React, { useEffect, useState } from "react";
 import './Footer.css'
 
 function Footer() {
-    const [isVisible, setIsVisible] = useState(false);
-    useEffect(() => {
-        const handleScroll = () => {
-            const top = window.scrollY;
-            setIsVisible(top > 1200);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
     return (
-        <div className={`Footer-Container ${isVisible ? 'F-fade-in' : 'F-fade-out'}`}>
+        <div className="Footer-Container">
             <div className="Footer-Head">
                 <a className="Footer-Title"><strong>HehNiceArt</strong></a>
                 <ul className="Socmed-Links">
