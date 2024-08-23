@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Outlet, Link } from 'react-router-dom';
 import './Navbar.css'
 
 function NavigationBar() {
@@ -34,14 +35,14 @@ function NavigationBar() {
   return (
     <div className='App-header' style={{ height: navbarHeight }}>
       <div className='nav-container'>
-        <a className='title'> <p><strong>HehNiceArt</strong></p></a>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>Who is Nice?</a></nav>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>Illustrations</a></nav>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>Animations</a></nav>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>Live2D Rigs</a></nav>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>Game Projects</a></nav>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>World</a></nav>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>Contact</a></nav>
+        <Link className='title' to='/'> <p><strong>HehNiceArt</strong></p></Link>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/WhoIsNice'>Who is Nice?</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/Illustration'>Illustrations</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/Animation'>Animations</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/Live2D'>Live2D Rigs</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/GameProjects'>Game Projects</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/World'>World</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/Contact'>Contact</Link></nav>
       </div>
 
       <li onClick={toggleSidebar} className='Hamburger'>
