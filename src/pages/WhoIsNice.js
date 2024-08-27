@@ -1,12 +1,12 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import HeadText from '../components/HeadText';
+import Terminal from '../components/Terminal'
 
 export default function WhoIsNice() {
     return (
         <div>
             <Navbar />
-            <HeadText />
+            <Terminal />
             <Footer />
         </div>
     );

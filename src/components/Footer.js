@@ -7,9 +7,11 @@ function Footer() {
             <div className="Footer-Head">
                 <a className="Footer-Title"><strong>HehNiceArt</strong></a>
                 <ul className="Socmed-Links">
-                    <a href="https://www.youtube.com/@HehNiceArt" target="_blank">Youtube</a>
-                    <a href="https://x.com/HehNiceArt" target="_blank">X (Twitter)</a>
-                    <a href="https://hehnice.itch.io/" target="_blank">Itch.IO</a>
+                    <a href="https://www.youtube.com/@HehNiceArt" target="_blank" rel="noopener noreferrer">Youtube</a>
+                    <a href="https://x.com/HehNiceArt" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+                    <a href="https://hehnice.itch.io/" target="_blank" rel="noopener noreferrer">Itch.IO</a>
+                    <a href="https://unityroom.com/users/7r96le185v43jtaihfc0" target="_blank" rel="noopener noreferrer">Unityroom</a>
+                    <a href="https://ko-fi.com/hehniceart" target="_blank" rel="noopener noreferrer">Ko-fi</a>
                 </ul>
             </div>
             <div className="Footer-Copyright">

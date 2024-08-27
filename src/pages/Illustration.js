@@ -1,11 +1,12 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Illust from '../components/illust';
 
 export default function Illustration() {
     return (
         <div>
             <Navbar />
-            <h1>Illustration Pages</h1>
+            <Illust />
             <Footer />
         </div>
     );
