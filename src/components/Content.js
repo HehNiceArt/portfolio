@@ -4,7 +4,6 @@ import './Flexbox.css'
 function ContentBody() {
     const [latestImage, setLatestImage] = useState('');
     const [description, setDescription] = useState('');
-    const [isMobile, setIsMobile] = useState(false);
     const [showLinks, setShowLinks] = useState(false);
 
     const toggleLinks = () => {
@@ -14,7 +13,11 @@ function ContentBody() {
     useEffect(() => {
         const fetchLatestImage = async () => {
             try {
-                const response = await fetch('/api/posts/latest');
+                const response = await fetch('http://localhost:3001/api/posts/latest');
+                if (!response.ok) {
+                    console.log('Network response was not ok: ', response.statusText);
+                    return;
+                }
                 const text = await response.text(); // Get the response as text
                 console.log('Latest Image:', text); // Log the raw response
 
@@ -24,7 +27,7 @@ function ContentBody() {
                     setLatestImage(data.imageUrl);
                     setDescription(data.description);
                 } catch (jsonError) {
-                    console.error('JSON parsing error:', jsonError);
+                    console.error('JSON parsing error:', jsonError, text);
                     console.error('Response was not valid JSON:', text);
                 }
             } catch (error) {
@@ -32,14 +35,9 @@ function ContentBody() {
             }
         };
         fetchLatestImage();
-
-        const checkIfMobile = () => {
-            setIsMobile(/Mobi|Android/i.test(navigator.userAgent));
-        }
-        checkIfMobile();
     }, []);
     return (
-        <div className={`flex-container ${isMobile ? 'mobile' : ''}`}>
+        <div className='flex-container'>
             <div className="flex-padd">
                 {latestImage && <img src={latestImage} alt={description} className="flex-image"></img>}
                 <div className="flex-column">

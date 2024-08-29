@@ -13,7 +13,7 @@ export default function Illust() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const response = await axios.get('/api/images');
+                const response = await axios.get('http://localhost:3001/api/images');
                 setImages(response.data);
             } catch (error) {
                 console.error("Error fetching images:", error);

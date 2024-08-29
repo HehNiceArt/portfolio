@@ -108,3 +108,34 @@
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
+
+.Image-Holder {
+    width: auto;
+    height: auto;
+    background-color: #D0DDEC;
+    border: 1px solid black;
+}
+
+.Image-Container {
+    padding: 30px;
+    display: flex;
+}
+
+.Image-img {
+    display: flex;
+    width: auto;
+    max-width: 500px;
+    height: auto;
+    pointer-events: none;
+}
+
+.Image-Close {
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    right: 0;
+}
+
+.Image-Close:hover {
+    cursor: pointer;
+}

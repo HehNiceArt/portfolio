@@ -21,8 +21,13 @@ router.get('/latest', async (req, res) => {
         if (!latestPost) {
             return res.status(404).json({ message: 'No posts found' });
         }
-        res.json({ title: latestPost.title, description: latestPost.description, imageUrl: latestPost.imageUrl });
+        res.json({
+            title: latestPost.title,
+            description: latestPost.description,
+            imageUrl: latestPost.imageUrl
+        });
     } catch (error) {
+        console.error('Error fetching latest post:', error); // Log the error for debugging
         res.status(500).json({ message: error.message });
     }
 });
