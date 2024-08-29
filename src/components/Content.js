@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import './Flexbox.css'
 
 function ContentBody() {
@@ -50,13 +51,13 @@ function ContentBody() {
                         <div className={`link-container ${showLinks ? 'show' : ''}`}>{ }
                             {showLinks && (
                                 <>
-                                    <li className="links"><a href="#">Who is Nice?</a></li>
-                                    <li className="links"><a href="#">Illustrations</a></li>
-                                    <li className="links"><a href="#">Animations</a></li>
-                                    <li className="links"><a href="#">Live2D Rigs</a></li>
-                                    <li className="links"><a href="#">Game Projects</a></li>
-                                    <li className="links"><a href="#">World</a></li>
-                                    <li className="links"><a href="#">Contact</a></li>
+                                    <li className="links"><Link to="/WhoIsNice">Who is Nice?</Link></li>
+                                    <li className="links"><Link to="/Illustration">Illustrations</Link></li>
+                                    <li className="links"><Link to="/Animation">Animations</Link></li>
+                                    <li className="links"><Link to="/Live2D">Live2D Rigs</Link></li>
+                                    <li className="links"><Link to="/GameProjects">Game Projects</Link></li>
+                                    <li className="links"><Link to="/World">World</Link></li>
+                                    <li className="links"><Link to="/Contact">Contact</Link></li>
                                 </>
                             )}
                         </div>
