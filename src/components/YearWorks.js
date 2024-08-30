@@ -48,6 +48,10 @@ function YearWorks() {
                     <img src={testImage} className="YW-ImageContainer"></img>
                 </div>
             </div>
+            <div className="YW-Disclaimer">
+                <p className="fancy">Please refrain from reproducing the works and illustrations on this site without permission, secondary distribution, or claiming that they are your own.</p>
+
+            </div>
         </div>
     )
 }
