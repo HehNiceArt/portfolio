@@ -55,6 +55,14 @@
     margin-left: auto;
 }
 
+<<<<<<< HEAD
+=======
+.YW-Disclaimer {
+    width: auto;
+    padding: 0 100px 0 100px;
+}
+
+>>>>>>> main
 .YW-Panel:hover {
     width: calc(100% - 300px);
     height: calc(100% + 300px);
