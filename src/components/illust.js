@@ -32,10 +32,7 @@ export default function Illust() {
 
     return (
         <div>
-            <div className="Head-Container">
-                <p className="Head-Text">Illustration</p>
-                <p className="Head-Show"><span className="slash">/</span><span className="blink" onClick={toggleTerminal}>show.illustrations_*</span></p>
-            </div>
+            <p className="Head-Show"><span className="slash">/</span><span className="blink" onClick={toggleTerminal}>show.illustrations_*</span></p>
             <div className="Grid-Container">
                 <div className={`Grid ${showTerminal ? 'show' : ''}`}>{ }
                     {showTerminal && (
@@ -48,6 +45,7 @@ export default function Illust() {
                                 ))}
                             </div>
                             <div style={{ height: "5px" }}></div>
+                            <div className="Illust-Center"><p className="Illust-Text">ILLUSTRATIONS</p></div>
                             <div className="Grid-Flex row-right-to-left"> {/* Second row: left to right */}
                                 {duplicatedSecondRowImages.map((image, index) => (
                                     <div className="image-box" key={`${image._id}-left-${index}`}>

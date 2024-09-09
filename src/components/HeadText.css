@@ -1,18 +1,27 @@
 .Head-Container {
-    padding: 50px 50px 50px 50px;
+    padding: 50px 50px 0px 50px;
     display: flex;
     flex-direction: column;
     height: auto;
 }
 
 .Head-Text {
-    padding: 0 0 10px 0;
+    padding: 0 10px 10px 0;
     text-decoration-line: underline;
 }
 
+.Head-TextNot {
+    padding: 0 10px 10px 0;
+}
+
 .Head-Show {
-    padding: 10px 0 10px 0;
+    padding: 10px 50px 10px 50px;
     color: #828282;
+}
+
+.Head-TextContainer {
+    display: flex;
+    flex-direction: row;
 }
 
 .DragDiv {
