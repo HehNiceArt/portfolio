@@ -17,7 +17,7 @@ function YearWorks() {
 
     return (
         <div className="YW-Container">
-            <div className={`YW-Header ${isVisible ? 'fade-in' : 'fade-out'}`}>WORKS</div>
+            <div className={`YW-Header ${isVisible ? 'fade-in' : 'fade-out'}`}>YEARLY WORKS</div>
             <div className={`YW-Panel ${isVisible ? 'fade-in' : 'fade-out'}`}>
                 <div className="YW-ContentContainer">
                     <div className="YW-TextContainer">

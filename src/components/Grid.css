@@ -4,11 +4,15 @@
     grid-template-rows: 300px;
     gap: 5px;
     width: 100%;
+    position: relative;
 }
 
 .Grid-Container {
     min-height: 500px;
     height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -65,4 +69,24 @@
     100% {
         transform: translateX(-100%);
     }
+}
+
+.Illust-Center {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 28%;
+    width: fit-content;
+    margin-inline: auto;
+    background-color: #D0DDEC;
+    padding: 10px 20px 10px 20px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+}
+
+.Illust-Text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #878ECD;
 }
