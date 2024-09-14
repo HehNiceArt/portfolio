@@ -19,5 +19,8 @@ const imageSchema = new mongoose.Schema({
     }
 });
 
+// Create an index on the createdAt field to optimize sorting
+imageSchema.index({ createdAt: -1 });
+
 const Image = mongoose.model('Image', imageSchema);
 export default Image;

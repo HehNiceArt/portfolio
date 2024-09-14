@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import './HeadText.css'
 import './Grid.css'
+import './Spinner.css'
+import Choices from "./Choices";
 
 export default function Illust() {
     const [images, setImages] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [showTerminal, setShowTerminal] = useState(true);
     const toggleTerminal = () => {
         setShowTerminal(prev => !prev);
@@ -17,6 +20,8 @@ export default function Illust() {
                 setImages(response.data);
             } catch (error) {
                 console.error("Error fetching images:", error);
+            } finally {
+                setLoading(false);
             }
         };
         fetchImages();
@@ -32,27 +37,34 @@ export default function Illust() {
 
     return (
         <div>
+            <Choices first="Illustration" second="Animation" />
             <p className="Head-Show"><span className="slash">/</span><span className="blink" onClick={toggleTerminal}>show.illustrations_*</span></p>
             <div className="Grid-Container">
                 <div className={`Grid ${showTerminal ? 'show' : ''}`}>{ }
                     {showTerminal && (
                         <>
-                            <div className="Grid-Flex row-right-to-left"> {/* First row: right to left */}
-                                {duplicatedFirstRowImages.map((image, index) => (
-                                    <div className="image-box" key={`${image._id}-right-${index}`}>
-                                        <img src={image.url} alt={image.name} />
+                            {loading ? (
+                                <div className="Spinner">Loading...</div>
+                            ) : (
+                                <>
+                                    <div className="Grid-Flex row-right-to-left"> {/* First row: right to left */}
+                                        {duplicatedFirstRowImages.map((image, index) => (
+                                            <div className="image-box" key={`${image._id}-right-${index}`}>
+                                                <img src={image.url} alt={image.name} />
+                                            </div>
+                                        ))}
                                     </div>
-                                ))}
-                            </div>
-                            <div style={{ height: "5px" }}></div>
-                            <div className="Illust-Center"><p className="Illust-Text">ILLUSTRATIONS</p></div>
-                            <div className="Grid-Flex row-right-to-left"> {/* Second row: left to right */}
-                                {duplicatedSecondRowImages.map((image, index) => (
-                                    <div className="image-box" key={`${image._id}-left-${index}`}>
-                                        <img src={image.url} alt={image.name} />
+                                    <div style={{ height: "5px" }}></div>
+                                    <div className="Illust-Center"><p className="Illust-Text">ILLUSTRATIONS</p></div>
+                                    <div className="Grid-Flex row-right-to-left"> {/* Second row: left to right */}
+                                        {duplicatedSecondRowImages.map((image, index) => (
+                                            <div className="image-box" key={`${image._id}-left-${index}`}>
+                                                <img src={image.url} alt={image.name} />
+                                            </div>
+                                        ))}
                                     </div>
-                                ))}
-                            </div>
+                                </>
+                            )}
                         </>
                     )}
                 </div>
