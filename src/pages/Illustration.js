@@ -7,7 +7,6 @@ export default function Illustration() {
     return (
         <div>
             <Navbar />
-            <Choices first={"Illustration"} second={"Animation"} />
             <Illust />
             <Footer />
         </div>
