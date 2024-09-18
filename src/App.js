@@ -1,19 +1,30 @@
-import './App.css';
-import NavigationBar from './components/Navbar';
-import Content from './components/Content';
-import News from './components/News'
-import YearWorks from './components/YearWorks';
-import Footer from './components/Footer';
+import Home from './pages/Home';
+import WhoIsNice from './pages/WhoIsNice';
+import Illustration from './pages/Illustration';
+import Animation from './pages/Animation';
+import Live2D from './pages/Live2D';
+import GameProj from './pages/GameProj';
+import World from './pages/World';
+import Contact from './pages/Contact';
+import NoPage from './pages/NoPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <NavigationBar />
-      <Content />
-      <News />
-      <YearWorks />
-      <Footer />
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path='/WhoIsNice' element={<WhoIsNice />} />
+          <Route path='/Illustration' element={<Illustration />} />
+          <Route path='/Animation' element={<Animation />} />
+          <Route path='/Live2D' element={<Live2D />} />
+          <Route path='/GameProjects' element={<GameProj />} />
+          <Route path='/World' element={<World />} />
+          <Route path='/Contact' element={<Contact />} />
+          <Route path='*' element={<NoPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
-export default App; 

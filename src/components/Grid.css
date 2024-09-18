@@ -1,0 +1,92 @@
+.Grid-Flex {
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+    grid-template-rows: 300px;
+    gap: 5px;
+    width: 100%;
+    position: relative;
+}
+
+.Grid-Container {
+    min-height: 500px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Grid {
+    display: flex;
+    overflow: hidden;
+    padding: 50px 0 50px 0;
+    flex-direction: column;
+    opacity: 0;
+    height: 0;
+    transition: height 1s ease, opacity 1s ease;
+}
+
+.Grid.show {
+    height: auto;
+    opacity: 1;
+    transition: height 1s ease, opacity 1s ease;
+}
+
+.row-right-to-left {
+    animation: moveRightToLeft 200s linear infinite;
+    /* Adjust duration as needed */
+}
+
+.image-box {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-box img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@keyframes moveRightToLeft {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes moveLeftToRight {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.Illust-Center {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 28%;
+    width: fit-content;
+    margin-inline: auto;
+    background-color: #D0DDEC;
+    padding: 10px 20px 10px 20px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+}
+
+.Illust-Text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #878ECD;
+}
