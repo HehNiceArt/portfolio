@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import './Flexbox.css'
 
 function ContentBody() {
     const [latestImage, setLatestImage] = useState('');
     const [description, setDescription] = useState('');
-    const [isMobile, setIsMobile] = useState(false);
     const [showLinks, setShowLinks] = useState(false);
 
     const toggleLinks = () => {
@@ -15,6 +15,10 @@ function ContentBody() {
         const fetchLatestImage = async () => {
             try {
                 const response = await fetch('http://localhost:3001/api/posts/latest');
+                if (!response.ok) {
+                    console.log('Network response was not ok: ', response.statusText);
+                    return;
+                }
                 const text = await response.text(); // Get the response as text
                 console.log('Latest Image:', text); // Log the raw response
 
@@ -24,7 +28,7 @@ function ContentBody() {
                     setLatestImage(data.imageUrl);
                     setDescription(data.description);
                 } catch (jsonError) {
-                    console.error('JSON parsing error:', jsonError);
+                    console.error('JSON parsing error:', jsonError, text);
                     console.error('Response was not valid JSON:', text);
                 }
             } catch (error) {
@@ -32,14 +36,9 @@ function ContentBody() {
             }
         };
         fetchLatestImage();
-
-        const checkIfMobile = () => {
-            setIsMobile(/Mobi|Android/i.test(navigator.userAgent));
-        }
-        checkIfMobile();
     }, []);
     return (
-        <div className={`flex-container ${isMobile ? 'mobile' : ''}`}>
+        <div className='flex-container'>
             <div className="flex-padd">
                 {latestImage && <img src={latestImage} alt={description} className="flex-image"></img>}
                 <div className="flex-column">
@@ -52,13 +51,13 @@ function ContentBody() {
                         <div className={`link-container ${showLinks ? 'show' : ''}`}>{ }
                             {showLinks && (
                                 <>
-                                    <li className="links"><a href="#">Who is Nice?</a></li>
-                                    <li className="links"><a href="#">Illustrations</a></li>
-                                    <li className="links"><a href="#">Animations</a></li>
-                                    <li className="links"><a href="#">Live2D Rigs</a></li>
-                                    <li className="links"><a href="#">Game Projects</a></li>
-                                    <li className="links"><a href="#">World</a></li>
-                                    <li className="links"><a href="#">Contact</a></li>
+                                    <li className="links"><Link to="/WhoIsNice">Who is Nice?</Link></li>
+                                    <li className="links"><Link to="/Illustration">Illustrations</Link></li>
+                                    <li className="links"><Link to="/Animation">Animations</Link></li>
+                                    <li className="links"><Link to="/Live2D">Live2D Rigs</Link></li>
+                                    <li className="links"><Link to="/GameProjects">Game Projects</Link></li>
+                                    <li className="links"><Link to="/World">World</Link></li>
+                                    <li className="links"><Link to="/Contact">Contact</Link></li>
                                 </>
                             )}
                         </div>

@@ -17,7 +17,7 @@ function YearWorks() {
 
     return (
         <div className="YW-Container">
-            <div className={`YW-Header ${isVisible ? 'fade-in' : 'fade-out'}`}>WORKS</div>
+            <div className={`YW-Header ${isVisible ? 'fade-in' : 'fade-out'}`}>YEARLY WORKS</div>
             <div className={`YW-Panel ${isVisible ? 'fade-in' : 'fade-out'}`}>
                 <div className="YW-ContentContainer">
                     <div className="YW-TextContainer">
@@ -47,6 +47,9 @@ function YearWorks() {
                     </div>
                     <img src={testImage} className="YW-ImageContainer"></img>
                 </div>
+            </div>
+            <div className="YW-Disclaimer">
+                <p className="fancy">Please refrain from reproducing the works and illustrations on this site without permission, secondary distribution, or claiming that they are your own.</p>
             </div>
         </div>
     )
