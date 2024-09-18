@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Outlet, Link } from 'react-router-dom';
 import './Navbar.css'
 
 function NavigationBar() {
@@ -34,23 +35,23 @@ function NavigationBar() {
   return (
     <div className='App-header' style={{ height: navbarHeight }}>
       <div className='nav-container'>
-        <a className='title'> <p><strong>HehNiceArt</strong></p></a>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>Who is Nice?</a></nav>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>Illustrations</a></nav>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>Animations</a></nav>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>Live2D Rigs</a></nav>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>Game Projects</a></nav>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>World</a></nav>
-        <nav className='hideOnMobile'><a className="nav-links" href='#'>Contact</a></nav>
-      </div>
+        <Link className='title' to='/'> <p><strong>HehNiceArt</strong></p></Link>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/WhoIsNice'>Who is Nice?</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/Illustration'>Illustrations</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/Animation'>Animations</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/Live2D'>Live2D Rigs</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/GameProjects'>Game Projects</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/World'>World</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/Contact'>Contact</Link></nav>
 
-      <li onClick={toggleSidebar} className='Hamburger'>
-        <a href='#'>
-          <svg xmlns='http://www.w3.org/2000/svg' height='22px' viewBox='0 -960 960 960' width='22px' fill='#000000'>
-            <path d='M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z' />
-          </svg>
-        </a>
-      </li>
+        <li onClick={toggleSidebar} className='Hamburger'>
+          <a href='#'>
+            <svg xmlns='http://www.w3.org/2000/svg' height='22px' viewBox='0 -960 960 960' width='22px' fill='#000000'>
+              <path d='M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z' />
+            </svg>
+          </a>
+        </li>
+      </div>
       <nav>
         <ul className={`Sidebar ${isSidebarVisible ? 'active' : ''}`}>
           <li className="cross" onClick={toggleSidebar}>
@@ -60,13 +61,13 @@ function NavigationBar() {
               </svg>
             </a>
           </li>
-          <li className='sidebar-links'><a href='#'>Who is Nice?</a></li>
-          <li className='sidebar-links'><a href='#'>Illustrations</a></li>
-          <li className='sidebar-links'><a href='#'>Animations</a></li>
-          <li className='sidebar-links'><a href='#'>Live2D Rigs</a></li>
-          <li className='sidebar-links'><a href='#'>Game Projects</a></li>
-          <li className='sidebar-links'><a href='#'>World</a></li>
-          <li className='sidebar-links'><a href='#'>Contact</a></li>
+          <li className='sidebar-links'><Link to='/WhoIsNice'>Who is Nice?</Link></li>
+          <li className='sidebar-links'><Link to='/Illustration'>Illustrations</Link></li>
+          <li className='sidebar-links'><Link to='/Animation'>Animations</Link></li>
+          <li className='sidebar-links'><Link to='/Live2D'>Live2D Rigs</Link></li>
+          <li className='sidebar-links'><Link to='/GameProjects'>Game Projects</Link></li>
+          <li className='sidebar-links'><Link to='/World'>World</Link></li>
+          <li className='sidebar-links'><Link to='/Contact'>Contact</Link></li>
         </ul>
       </nav>
 

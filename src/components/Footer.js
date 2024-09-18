@@ -2,23 +2,16 @@ import React, { useEffect, useState } from "react";
 import './Footer.css'
 
 function Footer() {
-    const [isVisible, setIsVisible] = useState(false);
-    useEffect(() => {
-        const handleScroll = () => {
-            const top = window.scrollY;
-            setIsVisible(top > 1200);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
     return (
-        <div className={`Footer-Container ${isVisible ? 'F-fade-in' : 'F-fade-out'}`}>
+        <div className="Footer-Container">
             <div className="Footer-Head">
                 <a className="Footer-Title"><strong>HehNiceArt</strong></a>
                 <ul className="Socmed-Links">
-                    <a href="#">Youtube</a>
-                    <a href="#">X (Twitter)</a>
-                    <a href="#">Itch.IO</a>
+                    <a href="https://www.youtube.com/@HehNiceArt" target="_blank" rel="noopener noreferrer">Youtube</a>
+                    <a href="https://x.com/HehNiceArt" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+                    <a href="https://hehnice.itch.io/" target="_blank" rel="noopener noreferrer">Itch.IO</a>
+                    <a href="https://unityroom.com/users/7r96le185v43jtaihfc0" target="_blank" rel="noopener noreferrer">Unityroom</a>
+                    <a href="https://ko-fi.com/hehniceart" target="_blank" rel="noopener noreferrer">Ko-fi</a>
                 </ul>
             </div>
             <div className="Footer-Copyright">
