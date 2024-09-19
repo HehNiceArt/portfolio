@@ -13,18 +13,18 @@ export default function Illust() {
         setShowTerminal(prev => !prev);
     }
 
+    const fetchImages = async (page = 1) => {
+        try {
+            const response = await axios.get(`http://localhost:3001/api/images?page=${page}&limit=16`);
+            setImages(response.data);
+        } catch (error) {
+            console.error("Error fetching images:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
     useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const response = await axios.get('http://localhost:3001/api/images');
-                setImages(response.data);
-            } catch (error) {
-                console.error("Error fetching images:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchImages();
+        fetchImages(1);
     }, []);
 
     // Ensure there are enough images

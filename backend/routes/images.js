@@ -5,7 +5,7 @@ const router = express.Router();
 
 // Route to get all images with pagination
 router.get('/', async (req, res) => {
-    const { page = 1, limit = 10 } = req.query;
+    const { page = 1, limit = 16 } = req.query;
     const cacheKey = `images_${page}_${limit}`;
     const cachedData = req.cache.get(cacheKey);
 

@@ -1,6 +1,5 @@
 import express from 'express';
 import mongoose from 'mongoose';
-
 const router = express.Router();
 
 // Define your Post schema
@@ -35,7 +34,6 @@ router.get('/latest', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
-
 // Route to get all posts with pagination
 router.get('/', async (req, res) => {
     const { page = 1, limit = 10 } = req.query;
