@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import './Footer.css'
 
 function Footer() {
     return (
         <div className="Footer-Container">
             <div className="Footer-Head">
-                <a className="Footer-Title"><strong>HehNiceArt</strong></a>
+                <p className="Footer-Title"><strong>HehNiceArt</strong></p>
                 <ul className="Socmed-Links">
                     <a href="https://www.youtube.com/@HehNiceArt" target="_blank" rel="noopener noreferrer">Youtube</a>
                     <a href="https://x.com/HehNiceArt" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
