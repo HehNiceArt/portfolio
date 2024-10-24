@@ -72,17 +72,17 @@
 }
 
 .Illust-Center {
-    position: absolute;
+    margin: 5px auto;
     z-index: 10;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    bottom: 28%;
+    bottom: 0;
+    height: fit-content;
     width: fit-content;
-    margin-inline: auto;
     background-color: #D0DDEC;
-    padding: 10px 20px 10px 20px;
-    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
     border-radius: 8px;
+    text-align: center;
 }
 
 .Illust-Text {

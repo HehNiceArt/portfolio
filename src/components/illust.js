@@ -54,7 +54,6 @@ export default function Illust() {
                                             </div>
                                         ))}
                                     </div>
-                                    <div style={{ height: "5px" }}></div>
                                     <div className="Illust-Center"><p className="Illust-Text">ILLUSTRATIONS</p></div>
                                     <div className="Grid-Flex row-right-to-left"> {/* Second row: left to right */}
                                         {duplicatedSecondRowImages.map((image, index) => (
