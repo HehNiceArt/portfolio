@@ -1,12 +1,12 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import Choices from '../components/Choices'
+import Anim from '../components/Anim';
 
 export default function Animation() {
     return (
         <div>
             <Navbar />
-            <Choices second={"Illustration"} third={"Animation"} />
+            <Anim />
             <Footer />
         </div>
     );
