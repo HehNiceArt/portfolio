@@ -9,8 +9,17 @@ export default function Illust() {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showTerminal, setShowTerminal] = useState(true);
+    const [selectedImage, setSelectedImage] = useState(null);
     const toggleTerminal = () => {
         setShowTerminal(prev => !prev);
+    }
+
+    const handleImageClick = (image) => {
+        setSelectedImage(image);
+    }
+
+    const closeModal = () => {
+        setSelectedImage(null);
     }
 
     const fetchImages = async (page = 1) => {
@@ -49,7 +58,8 @@ export default function Illust() {
                                 <>
                                     <div className="Grid-Flex row-right-to-left"> {/* First row: right to left */}
                                         {duplicatedFirstRowImages.map((image, index) => (
-                                            <div className="image-box" key={`${image._id}-right-${index}`}>
+                                            <div className="image-box" key={`${image._id}-right-${index}`}
+                                                onClick={() => handleImageClick(image)}>
                                                 <img src={image.url} alt={image.name} />
                                             </div>
                                         ))}
@@ -59,7 +69,8 @@ export default function Illust() {
                                     <div style={{ height: "5px" }}></div>
                                     <div className="Grid-Flex row-right-to-left"> {/* Second row: left to right */}
                                         {duplicatedSecondRowImages.map((image, index) => (
-                                            <div className="image-box" key={`${image._id}-left-${index}`}>
+                                            <div className="image-box" key={`${image._id}-left-${index}`}
+                                                onClick={() => handleImageClick(image)}>
                                                 <img src={image.url} alt={image.name} />
                                             </div>
                                         ))}
@@ -69,6 +80,12 @@ export default function Illust() {
                         </>
                     )}
                 </div>
+            </div>
+            <div className={`modal ${selectedImage ? 'active' : ''}`} onClick={closeModal}>
+                <span className="modal-close">&times;</span>
+                {selectedImage && (
+                    <img src={selectedImage.url} alt={selectedImage.name} onClick={(e) => e.stopPropagation()} />
+                )}
             </div>
         </div>
     )
