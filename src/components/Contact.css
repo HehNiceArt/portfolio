@@ -88,3 +88,74 @@
     margin-bottom: 10px;
     resize: none;
 }
+
+.privacyLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.privacyCheckbox {
+    display: none;
+}
+
+.privacyCheckbox+span::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1.5px solid #6666cc;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.privacyCheckbox:checked+span::before {
+    background-color: #6666cc;
+    border-color: #6666cc;
+    content: "✔";
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.privacyLabel span a {
+    color: #080808;
+    text-decoration: underline;
+}
+
+.sendButton {
+    width: calc(100% - 100px);
+    max-width: 300px;
+    margin: 60px 50px 0px;
+    padding: 5px;
+    background-color: #656CAF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sendButton:hover {
+    background-color: #7178b8;
+}
+
+.sendButton:active {
+    background-color: #6268a8;
+}
+
+.privacyLink {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.privacyLink:hover {
+    color: #878ECD;
+}

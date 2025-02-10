@@ -6,17 +6,18 @@ export default function Contact() {
     const [formData, setFormData] = useState({
         email: '',
         subject: '',
-        details: ''
+        details: '',
+        privacyPolicy: false
     });
     const [showTerminal, setShowTerminal] = useState(true);
     const toggleTerminal = () => {
         setShowTerminal(prev => !prev);
     }
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value, type, checked } = e.target;
         setFormData(prev => ({
             ...prev,
-            [name]: value
+            [name]: type === 'checkbox' ? checked : value
         }));
     };
     return (
@@ -74,6 +75,21 @@ export default function Contact() {
                                 </div>
                             </div>
                         </div>
+                        <div className="contactText">
+                            <label className="privacyLabel">
+                                <input
+                                    type="checkbox"
+                                    name="privacyPolicy"
+                                    checked={formData.privacyPolicy}
+                                    onChange={handleInputChange}
+                                    className="privacyCheckbox"
+                                />
+                                <span>I agree to the <a href="#" className="privacyLink">privacy policy</a>.</span>
+                            </label>
+                        </div>
+                        <button className="sendButton">
+                            send
+                        </button>
                     </>
                 )}
             </div>
