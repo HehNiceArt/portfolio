@@ -72,10 +72,8 @@
 }
 
 .Illust-Center {
-    position: absolute;
     z-index: 10;
     left: 50%;
-    transform: translateX(-50%);
     bottom: 28%;
     width: fit-content;
     margin-inline: auto;

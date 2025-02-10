@@ -66,6 +66,7 @@
 
 .flex-image {
     width: 560px;
+    height: 500px;
     margin-right: 100px;
     object-fit: cover;
     border-radius: 10px;
@@ -76,6 +77,7 @@
 
 .flex-image:hover {
     width: 570px;
+    height: 510px;
     transition: width 0.3s ease, height 0.3s ease;
     box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
         -10px -10px 10px rgb(234, 238, 239);

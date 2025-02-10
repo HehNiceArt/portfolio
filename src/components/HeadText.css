@@ -140,6 +140,7 @@
     width: auto;
     max-width: 500px;
     height: auto;
+    max-height: 600px;
     pointer-events: none;
 }
 
