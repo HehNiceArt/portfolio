@@ -45,11 +45,17 @@
         margin-right: 0px !important;
         margin-bottom: 30px;
         min-height: 350px;
-        width: min(400px, 90%) !important;
-        height: min(500px, 90%) !important;
+        width: min(400px, 90%);
+        height: min(500px, 90vw);
         object-fit: cover;
         border-radius: 10px;
-        transition: width 0.3s ease, height 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .flex-image:hover {
+        transform: scale(1.02);
+        box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
+            -10px -10px 10px rgb(234, 238, 239);
     }
 
     .flex-text {
@@ -65,20 +71,18 @@
 }
 
 .flex-image {
-    width: 560px;
-    height: 500px;
+    width: min(560px, 90%);
+    height: min(500px, 90vw);
     margin-right: 100px;
     object-fit: cover;
     border-radius: 10px;
     display: flex;
     align-items: start;
-    transition: box-shadow 0.3s ease, width 0.3s ease, height 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flex-image:hover {
-    width: 570px;
-    height: 510px;
-    transition: width 0.3s ease, height 0.3s ease;
+    transform: scale(1.02);
     box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
         -10px -10px 10px rgb(234, 238, 239);
 }
