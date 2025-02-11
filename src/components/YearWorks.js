@@ -50,6 +50,7 @@ function YearWorks() {
             </div>
             <div className="YW-Disclaimer">
                 <p className="fancy">Please refrain from reproducing the works and illustrations on this site without permission, secondary distribution, or claiming that they are your own.</p>
+                <p className="fancy">Tested on Mozilla Firefox and Safari.</p>
             </div>
         </div>
     )

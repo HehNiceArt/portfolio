@@ -36,7 +36,7 @@ function Footer() {
             <div className="Footer-Copyright">
                 <div className="Footer-CopyrightText">
                     <p>© {copyrightYear}</p>
-                    <p>last-updated <span>{lastUpdated}</span></p>
+                    <p>last updated <span>{lastUpdated}</span></p>
                     <p>website made by HehNiceArt</p>
                 </div>
             </div>
