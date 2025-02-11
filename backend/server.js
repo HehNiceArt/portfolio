@@ -50,12 +50,18 @@ app.use('/api/', limiter);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
     serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
     socketTimeoutMS: 45000, // Close sockets after 45s of inactivity
+    dbName: 'Portfolio'
 })
-    .then(() => { console.log('MongoDB connected') })
+    .then(() => {
+        console.log('MongoDB connected', mongoose.connection.db.databaseName);
+        console.log('Available collections:',
+            mongoose.connection.db.listCollections().toArray()
+                .then(collections => collections.map(c => c.name))
+                .then(names => console.log(names))
+        );
+    })
     .catch(err => console.error(err));
 
 mongoose.connection.on('error', err => {

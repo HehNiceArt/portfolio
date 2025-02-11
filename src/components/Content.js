@@ -17,6 +17,7 @@ function ContentBody() {
         const fetchLatestImage = async () => {
             try {
                 const data = await api.get(`${endpoints.posts}/latest`);
+                console.log(data);
                 setLatestImage(data.imageUrl);
                 setDescription(data.description);
             } catch (error) {

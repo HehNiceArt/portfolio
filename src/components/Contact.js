@@ -45,12 +45,6 @@ export default function Contact() {
     };
 
     useEffect(() => {
-        console.log('Raw env values:', {
-            serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID,
-            templateId: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-            publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-        });
-
         const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
         if (publicKey) {
             emailJS.init(publicKey);
@@ -94,12 +88,6 @@ export default function Contact() {
         const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
         const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
         const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
-
-        console.log('Environment Variables Status:', {
-            REACT_APP_EMAILJS_SERVICE_ID: process.env.REACT_APP_EMAILJS_SERVICE_ID,
-            REACT_APP_EMAILJS_TEMPLATE_ID: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-            REACT_APP_EMAILJS_PUBLIC_KEY: process.env.REACT_APP_EMAILJS_PUBLIC_KEY ? 'Present' : 'Missing'
-        });
 
         if (!serviceId || !templateId || !publicKey) {
             console.error('EmailJS configuration missing:', {

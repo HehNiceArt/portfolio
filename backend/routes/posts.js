@@ -7,33 +7,39 @@ const router = express.Router();
 
 // Define your Post schema
 const postSchema = new mongoose.Schema({
-    title: String,
-    description: String,
-    imageUrl: String,
-    createdAt: { type: Date, default: Date.now },
-    date: { type: Date, default: Date.now }
-});
+    url: {
+        type: String,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: false
+    },
+    createdAt: { type: Date, default: Date.now }
+}, { collection: 'illust' });
 
-const Post = mongoose.model('Post', postSchema, 'illust');
+const Post = mongoose.model('Post', postSchema);
 
-// Route to get the latest post
 router.get('/latest', async (req, res) => {
-    const cacheKey = 'latestPost';
-    const cachedData = req.cache.get(cacheKey);
-
-    if (cachedData) {
-        return res.json(cachedData);
-    }
-
     try {
+        const allPosts = await Post.find().lean();
         const latestPost = await Post.findOne().sort({ createdAt: -1 }).lean();
+
         if (!latestPost) {
-            return res.status(404).json({ message: 'No posts found' });
+            return res.status(404).json({
+                message: 'No posts found',
+                debug: {
+                    collectionName: Post.collection.collectionName,
+                    totalPosts: allPosts.length
+                }
+            });
         }
-        req.cache.set(cacheKey, latestPost);
         res.json(latestPost);
     } catch (error) {
-        console.error('Error fetching latest post:', error);
         res.status(500).json({ message: error.message });
     }
 });

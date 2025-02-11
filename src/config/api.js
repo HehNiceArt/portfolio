@@ -5,6 +5,8 @@ const headers = {
     'Content-Type': 'application/json',
     'X-API-Key': API_KEY
 };
+console.log('Current API Key:', API_KEY); // Remove this after verification
+
 
 export const api = {
     get: async (endpoint) => {

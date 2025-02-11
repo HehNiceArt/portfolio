@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import './HeadText.css'
+import { api, endpoints } from '../config/api.js';
 
 export default function HeadText() {
     const [showFact, setShowFact] = useState(false);
@@ -19,19 +20,9 @@ export default function HeadText() {
     useEffect(() => {
         const fetchLatestImage = async () => {
             try {
-                const response = await fetch("http://localhost:3001/api/posts/latest");
-
-                const text = await response.text();
-                console.log('Latest Image:', text); // Log the raw response
-
-                try {
-                    const data = JSON.parse(text); // Parse the text as JSON
-                    setLatestImage(data.imageUrl);
-                    setDescription(data.description);
-                } catch (jsonError) {
-                    console.error('JSON parsing error:', jsonError, text);
-                    console.error('Response was not valid JSON:', text);
-                }
+                const data = await api.get(`${endpoints.posts}/latest`);
+                setLatestImage(data.imageUrl);
+                setDescription(data.description);
             } catch (error) {
                 console.error('Error fetching the latest image: ', error);
             }
