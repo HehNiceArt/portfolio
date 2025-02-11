@@ -93,7 +93,7 @@ export default function HeadText() {
                             <>
                                 <div className="Terminal-Head"><p>HehNiceArt</p><span className='Close'><p onClick={toggleTerminal}>X</p></span></div>
                                 <div className="Terminal-Content">
-                                    <li className="Terminal-Text">An illustrator, indie game developer, Live2D artist and rigger, animator, and aspiring graphics programmer.</li>
+                                    <li className="Terminal-Text">An illustrator, indie game developer, Live2D artist and rigger, animator, and aspiring technical artist.</li>
                                     <li className="Terminal-Text">An artist that creates world/s using his own technical skills.</li>
                                     <li className="Terminal-Text">Likes to dabble in multiple disciplines of arts and programming, from illustrations to animations, web development to game development.</li>
                                     <li className="Terminal-Text">Loves algorithms such as Cellular Automata, Wave Function Collapse, and <span onClick={toggleLinks} className="Lindenmayer-Text">Lindenmayer System.</span></li>

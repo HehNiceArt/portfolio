@@ -87,7 +87,14 @@ export default function Animations() {
             <div className={`modal ${selectedAnimation ? 'active' : ''}`} onClick={closeModal}>
                 <span className="modal-close">&times;</span>
                 {selectedAnimation && (
-                    <img src={selectedAnimation.url} alt={selectedAnimation.name} onClick={(e) => e.stopPropagation()} />
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <img src={selectedAnimation.url} alt={selectedAnimation.name} />
+                        <div className="modal-sidebar">
+                            <h2>{selectedAnimation.name}</h2>
+                            <p className="modal-date">{new Date(selectedAnimation.createdAt).toLocaleDateString()}</p>
+                            <p className="modal-description">{selectedAnimation.description}</p>
+                        </div>
+                    </div>
                 )}
             </div>
         </div>

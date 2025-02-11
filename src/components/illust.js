@@ -85,7 +85,14 @@ export default function Illust() {
             <div className={`modal ${selectedImage ? 'active' : ''}`} onClick={closeModal}>
                 <span className="modal-close">&times;</span>
                 {selectedImage && (
-                    <img src={selectedImage.url} alt={selectedImage.name} onClick={(e) => e.stopPropagation()} />
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <img src={selectedImage.url} alt={selectedImage.name} />
+                        <div className="modal-sidebar">
+                            <h2>{selectedImage.name}</h2>
+                            <p className="modal-date">{new Date(selectedImage.createdAt).toLocaleDateString()}</p>
+                            <p className="modal-description">{selectedImage.description}</p>
+                        </div>
+                    </div>
                 )}
             </div>
         </div>
