@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
 import './HeadText.css'
 import './Grid.css'
 import './Spinner.css'

@@ -1,5 +1,3 @@
-import { rateLimit } from 'express-rate-limit';
-
 const authMiddleware = (req, res, next) => {
     const apiKey = req.headers['x-api-key'];
 
