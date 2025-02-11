@@ -4,6 +4,8 @@ import './HeadText.css'
 import './Grid.css'
 import './Spinner.css'
 import Choices from "./Choices";
+import { api, endpoints } from '../config/api.js';
+import logError from '../utils/errorHandler.js';
 
 export default function Animations() {
     const [animations, setAnimations] = useState([]);
@@ -25,10 +27,10 @@ export default function Animations() {
 
     const fetchAnimations = async (page = 1) => {
         try {
-            const response = await axios.get(`http://localhost:3001/api/animations?page=${page}&limit=16`);
-            setAnimations(response.data);
+            const response = await api.get(`${endpoints.animations}?page=${page}&limit=16`);
+            setAnimations(response);
         } catch (error) {
-            console.error("Error fetching animations:", error);
+            logError(error, 'fetchAnimations');
         } finally {
             setLoading(false);
         }

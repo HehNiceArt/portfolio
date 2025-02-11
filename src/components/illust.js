@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
 import './HeadText.css'
 import './Grid.css'
 import './Spinner.css'
 import Choices from "./Choices";
+import { api, endpoints } from '../config/api.js';
+import logError from "../utils/errorHandler.js";
 
 export default function Illust() {
     const [images, setImages] = useState([]);
@@ -24,10 +25,10 @@ export default function Illust() {
 
     const fetchImages = async (page = 1) => {
         try {
-            const response = await axios.get(`http://localhost:3001/api/images?page=${page}&limit=16`);
-            setImages(response.data);
+            const response = await api.get(`${endpoints.images}?page=${page}&limit=16`);
+            setImages(response);
         } catch (error) {
-            console.error("Error fetching images:", error);
+            console.error("Error fetching images:", logError(error, 'fetchImages'));
         } finally {
             setLoading(false);
         }

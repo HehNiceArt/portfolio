@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import './Flexbox.css'
+import { api, endpoints } from '../config/api.js';
+import logError from '../utils/errorHandler.js';
 
 function ContentBody() {
     const [latestImage, setLatestImage] = useState('');
@@ -14,25 +16,11 @@ function ContentBody() {
     useEffect(() => {
         const fetchLatestImage = async () => {
             try {
-                const response = await fetch('http://localhost:3001/api/posts/latest');
-                if (!response.ok) {
-                    console.log('Network response was not ok: ', response.statusText);
-                    return;
-                }
-                const text = await response.text(); // Get the response as text
-                console.log('Latest Image:', text); // Log the raw response
-
-                // Check if the response is valid JSON
-                try {
-                    const data = JSON.parse(text); // Parse the text as JSON
-                    setLatestImage(data.imageUrl);
-                    setDescription(data.description);
-                } catch (jsonError) {
-                    console.error('JSON parsing error:', jsonError, text);
-                    console.error('Response was not valid JSON:', text);
-                }
+                const data = await api.get(`${endpoints.posts}/latest`);
+                setLatestImage(data.imageUrl);
+                setDescription(data.description);
             } catch (error) {
-                console.error('Error fetching the latest image: ', error);
+                logError(error, 'fetchLatestImage');
             }
         };
         fetchLatestImage();
