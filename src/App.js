@@ -7,6 +7,7 @@ import GameProj from './pages/GameProj';
 import World from './pages/World';
 import Contact from './pages/Contact';
 import NoPage from './pages/NoPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
           <Route path='/GameProjects' element={<GameProj />} />
           <Route path='/World' element={<World />} />
           <Route path='/Contact' element={<Contact />} />
+          <Route path='/PrivacyPolicy' element={<PrivacyPolicy />} />
           <Route path='*' element={<NoPage />} />
         </Routes>
       </BrowserRouter>

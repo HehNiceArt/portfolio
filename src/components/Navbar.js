@@ -45,21 +45,17 @@ function NavigationBar() {
         <nav className='hideOnMobile'><Link className="nav-links" to='/Contact'>Contact</Link></nav>
 
         <li onClick={toggleSidebar} className='Hamburger'>
-          <a href='#'>
-            <svg xmlns='http://www.w3.org/2000/svg' height='22px' viewBox='0 -960 960 960' width='22px' fill='#000000'>
-              <path d='M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z' />
-            </svg>
-          </a>
+          <svg xmlns='http://www.w3.org/2000/svg' height='22px' viewBox='0 -960 960 960' width='22px' fill='#000000'>
+            <path d='M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z' />
+          </svg>
         </li>
       </div>
       <nav>
         <ul className={`Sidebar ${isSidebarVisible ? 'active' : ''}`}>
           <li className="cross" onClick={toggleSidebar}>
-            <a href='#'>
-              <svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#000000'>
-                <path d='m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z' />
-              </svg>
-            </a>
+            <svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#000000'>
+              <path d='m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z' />
+            </svg>
           </li>
           <li className='sidebar-links'><Link to='/WhoIsNice'>Who is Nice?</Link></li>
           <li className='sidebar-links'><Link to='/Illustration'>Illustrations</Link></li>

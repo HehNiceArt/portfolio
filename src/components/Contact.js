@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
+        name: '',
         email: '',
         subject: '',
         details: '',
@@ -53,7 +54,7 @@ export default function Contact() {
         }
     }, []);
     const validateForm = () => {
-        if (!formData.email || !formData.subject || !formData.details) {
+        if (!formData.name || !formData.email || !formData.subject || !formData.details) {
             return "All fields marked with ※ are required!";
         }
         if (!formData.privacyPolicy) {
@@ -63,6 +64,12 @@ export default function Contact() {
         const emailRegex = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/i;
         if (!emailRegex.test(formData.email)) {
             return "Please enter a valid email address! (e.g., name@example.com)";
+        }
+        if (formData.name.length < 2) {
+            return "Name must be at least 2 characters long!";
+        }
+        if (formData.name.length > 100) {
+            return "Name must not exceed 100 characters!";
         }
         if (formData.subject.length < 3) {
             return "File Name must be at least 3 characters long!";
@@ -111,7 +118,7 @@ export default function Contact() {
                 templateId,
                 {
                     to_name: "HehNiceArt",
-                    from_name: formData.email,
+                    from_name: formData.name,
                     subject: formData.subject,
                     message: formData.details,
                     reply_to: formData.email,
@@ -120,6 +127,7 @@ export default function Contact() {
             );
             setStatus({ loading: false, error: null, success: true });
             setFormData({
+                name: '',
                 email: '',
                 subject: '',
                 details: '',
@@ -148,6 +156,20 @@ export default function Contact() {
                         </div>
                         <div className="contactContainer">
                             <div className="contactHeader">CONTACT</div>
+                            <div className="contactPanel">
+                                <div className="contactContent">
+                                    <p className="contactDetail">NAME ※</p>
+                                    <input
+                                        type="name"
+                                        name="name"
+                                        className="contactInput"
+                                        value={formData.name}
+                                        onChange={handleInputChange}
+                                        placeholder="full name"
+                                    />
+                                    <div className="contactDivider"></div>
+                                </div>
+                            </div>
                             <div className="contactPanel">
                                 <div className="contactContent">
                                     <p className="contactDetail">EMAIL ※</p>
@@ -199,7 +221,7 @@ export default function Contact() {
                                     onChange={handleInputChange}
                                     className="privacyCheckbox"
                                 />
-                                <span>I agree to the <Link to="/privacy-policy" className="privacyLink">privacy policy</Link>.</span>
+                                <span>I agree to the <Link to="/PrivacyPolicy" className="privacyLink">privacy policy</Link>.</span>
                             </label>
                         </div>
                         {status.error && (

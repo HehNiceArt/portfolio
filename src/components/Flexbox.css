@@ -168,3 +168,33 @@
         opacity: 0;
     }
 }
+
+.policy-container {
+    padding: 50px 50px 10px 50px;
+    height: auto;
+    flex-direction: row;
+}
+
+.policy-title {
+    color: #000000;
+    font-weight: bold;
+    padding: 1rem 0 1rem 0;
+}
+
+.policy-date {
+    color: #828282;
+    padding: 0px 50px;
+    font-size: 0.9rem;
+}
+
+.policy-text {
+    text-decoration: none;
+    line-height: 1.5rem;
+    color: black;
+    padding: 0 0 1rem 0;
+}
+
+.policy-link {
+    text-decoration: none;
+    color: black;
+}
