@@ -30,7 +30,7 @@ function YearWorks() {
                             </ul>
                         </div>
                     </div>
-                    <img src={testImage} className="YW-ImageContainer"></img>
+                    <img src={testImage} className="YW-ImageContainer" alt="awda"></img>
                 </div>
             </div>
             <div className={`YW-Panel ${isVisible ? 'fade-in' : 'fade-out'}`}>
@@ -45,7 +45,7 @@ function YearWorks() {
                             </ul>
                         </div>
                     </div>
-                    <img src={testImage} className="YW-ImageContainer"></img>
+                    <img src={testImage} className="YW-ImageContainer" alt="adwad"></img>
                 </div>
             </div>
             <div className="YW-Disclaimer">

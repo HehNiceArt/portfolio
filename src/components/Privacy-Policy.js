@@ -21,18 +21,18 @@ export default function PrivacyForm() {
                 <p className="policy-text">You can request to delete or access your data, subject to legal obligations </p>
                 <p className="policy-title">&gt; Disclosure of Data</p>
                 <p className="policy-text">Your data may be disclosed in the following cases:</p>
-                <p className="policy-text"><strong>- Business Transactions (e.g., mergers, acquisitions)</strong></p>
-                <p className="policy-text"><strong>- Legal Compliance (e.g., law enforcement requests)</strong></p>
-                <p className="policy-text"><strong>- Protection of rights, security, and legal claims</strong></p>
-                <p className="policy-title">Security</p>
+                <p className="policy-text">- Business Transactions (e.g., mergers, acquisitions)</p>
+                <p className="policy-text">- Legal Compliance (e.g., law enforcement requests)</p>
+                <p className="policy-text">- Protection of rights, security, and legal claims.</p>
+                <p className="policy-title">&gt; Security</p>
                 <p className="policy-text">We take appropriate measures to protect your data but cannot guarantee absolute security.</p>
-                <p className="policy-title">Children's Privacy</p>
+                <p className="policy-title">&gt; Children's Privacy</p>
                 <p className="policy-text">We do not knowingly collect data from children under 13. If you believe we have, please contact us.</p>
-                <p className="policy-title">Third-Party Links</p>
+                <p className="policy-title">&gt; Third-Party Links</p>
                 <p className="policy-text">We are not responsible for the privacy practices of third-party websites linked from our Service.</p>
-                <p className="policy-title">Changes to This Policy</p>
+                <p className="policy-title">&gt; Changes to This Policy</p>
                 <p className="policy-text">We may update Our Privacy Policy from time to time. The revised privacy policy will become effective from the time it is displayed on this page. </p>
-                <p className="policy-title">Contact Us</p>
+                <p className="policy-title">&gt; Contact Us</p>
                 <p className="policy-text">For questions, contact us by email: <strong>hehniceart@gmail.com</strong></p>
             </div>
         </div>

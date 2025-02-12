@@ -86,7 +86,7 @@
 }
 
 .YW-listContent {
-    width: 200% !important;
+    width: 100% !important;
     margin: 5px 0;
     text-overflow: ellipsis;
     transition: all 0.3s ease;
