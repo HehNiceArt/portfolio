@@ -16,7 +16,7 @@
 .YW-TextContainer {
     display: flex;
     flex-direction: column;
-    margin-right: 50px;
+    width: 100%;
     height: auto;
     justify-content: start;
 }
@@ -77,27 +77,46 @@
 
 .YW-list {
     padding-left: 30px;
+    width: calc(100% - 30px);
 }
 
 .YW-listContainer {
     color: #656CAF;
+    width: 100%;
 }
 
 .YW-listContent {
-    width: auto;
-    max-width: 500px;
-    margin: 5px 0 5px 0;
+    width: 200% !important;
+    margin: 5px 0;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+    overflow: visible;
+    white-space: normal;
+}
+
+.YW-listContent:not(:hover) {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
+.YW-Panel:hover .YW-listContent {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+@media (max-width: 1200px) {
+    .YW-listContent {
+        max-width: 450px;
+    }
+}
+
 @media (max-width: 950px) {
     .YW-Panel {
-        width: 20px;
+        width: calc(100% - 100px);
+        min-width: auto;
         margin: 0 50px 50px 50px;
-        align-items: center;
-        min-width: 300px !important;
     }
 
     .YW-Panel:hover .YW-ImageContainer {
@@ -120,34 +139,27 @@
 
     .YW-TextContainer {
         margin: 0;
-        height: 100%;
     }
 
     .YW-list {
-        max-width: 400px;
+        width: calc(100% - 20px);
+        padding-left: 20px;
     }
 
     .YW-listContainer>li {
         width: 200px;
     }
 
-    .YW-listContent {
-        width: min(270px, 100%);
+    .YW-listContent:not(:hover) {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        min-width: 200px;
-        transition: width 0.3s ease;
-    }
-
-    .YW-Panel:hover .YW-listContent {
-        width: 350px;
-        transition: width 0.3s ease;
     }
 
     .YW-ContentContainer {
         flex-direction: column-reverse;
         display: flex;
+        width: 100%;
     }
 
     .YW-ImageContainer {
@@ -159,6 +171,20 @@
         transition: width 0.3s ease, height 0.3s ease;
     }
 
+}
+
+@media (max-width: 768px) {
+    .YW-listContent {
+        width: calc(100% - 20px);
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .YW-listContent {
+        width: calc(100% - 20px);
+        max-width: 250px;
+    }
 }
 
 .fade-in {
