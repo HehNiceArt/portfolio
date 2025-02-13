@@ -11,6 +11,26 @@ export default function Animations() {
     const [loading, setLoading] = useState(true);
     const [showTerminal, setShowTerminal] = useState(true);
     const [selectedAnimation, setSelectedAnimation] = useState(null);
+    const TypeWriter = ({ text, delay = 50, className = '' }) => {
+        const [displayText, setDisplayText] = useState('');
+        useEffect(() => {
+            let i = 0;
+            setDisplayText('');
+
+            const textString = String(text || '');
+
+            const timer = setInterval(() => {
+                if (i < textString.length) {
+                    setDisplayText(textString.substring(0, i + 1));
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, delay);
+            return () => clearInterval(timer);
+        }, [text, delay]);
+        return <span className={className}>{displayText}</span>
+    }
 
     const toggleTerminal = () => {
         setShowTerminal(prev => !prev);
@@ -90,9 +110,9 @@ export default function Animations() {
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                         <img src={selectedAnimation.url} alt={selectedAnimation.name} />
                         <div className="modal-sidebar">
-                            <h2>{selectedAnimation.name}</h2>
-                            <p className="modal-date">{new Date(selectedAnimation.createdAt).toLocaleDateString()}</p>
-                            <p className="modal-description">{selectedAnimation.description}</p>
+                            <h2><TypeWriter text={selectedAnimation.name} delay={70} /></h2>
+                            <p className="modal-date"><TypeWriter text={new Date(selectedAnimation.createdAt).toLocaleDateString()} delay={70} /></p>
+                            <p className="modal-description"><TypeWriter text={selectedAnimation.description} delay={30} /></p>
                         </div>
                     </div>
                 )}

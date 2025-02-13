@@ -11,6 +11,26 @@ export default function Illust() {
     const [loading, setLoading] = useState(true);
     const [showTerminal, setShowTerminal] = useState(true);
     const [selectedImage, setSelectedImage] = useState(null);
+    const TypeWriter = ({ text, delay = 50, className = '' }) => {
+        const [displayText, setDisplayText] = useState('');
+        useEffect(() => {
+            let i = 0;
+            setDisplayText('');
+
+            const textString = String(text || '');
+
+            const timer = setInterval(() => {
+                if (i < textString.length) {
+                    setDisplayText(textString.substring(0, i + 1));
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, delay);
+            return () => clearInterval(timer);
+        }, [text, delay]);
+        return <span className={className}>{displayText}</span>
+    }
     const toggleTerminal = () => {
         setShowTerminal(prev => !prev);
     }
@@ -88,9 +108,9 @@ export default function Illust() {
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                         <img src={selectedImage.url} alt={selectedImage.name} />
                         <div className="modal-sidebar">
-                            <h2>{selectedImage.name}</h2>
-                            <p className="modal-date">{new Date(selectedImage.createdAt).toLocaleDateString()}</p>
-                            <p className="modal-description">{selectedImage.description}</p>
+                            <h2><TypeWriter text={selectedImage.name} delay={70} /></h2>
+                            <p className="modal-date"><TypeWriter text={new Date(selectedImage.createdAt).toLocaleDateString()} delay={70} /></p>
+                            <p className="modal-description"><TypeWriter text={selectedImage.description} delay={30} /></p>
                         </div>
                     </div>
                 )}

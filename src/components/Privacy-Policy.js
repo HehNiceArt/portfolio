@@ -12,7 +12,7 @@ export default function PrivacyForm() {
                 <p className="policy-title">&gt; Personal Data We Collect</p>
                 <p className="policy-text">We may collect the following Personal Data:</p>
                 <p className="policy-text">- Email address</p>
-                <p className="policy-text">- First name and last name</p>
+                <p className="policy-text">- First name and Last name</p>
                 <p className="policy-title">&gt; Data Retention</p>
                 <p className="policy-text">We retain Personal Data only as long as necessary for legal and business purposes.</p>
                 <p className="policy-title">&gt; Data Transfers</p>
@@ -21,13 +21,12 @@ export default function PrivacyForm() {
                 <p className="policy-text">You can request to delete or access your data, subject to legal obligations </p>
                 <p className="policy-title">&gt; Disclosure of Data</p>
                 <p className="policy-text">Your data may be disclosed in the following cases:</p>
-                <p className="policy-text">- Business Transactions (e.g., mergers, acquisitions)</p>
                 <p className="policy-text">- Legal Compliance (e.g., law enforcement requests)</p>
                 <p className="policy-text">- Protection of rights, security, and legal claims.</p>
                 <p className="policy-title">&gt; Security</p>
                 <p className="policy-text">We take appropriate measures to protect your data but cannot guarantee absolute security.</p>
                 <p className="policy-title">&gt; Children's Privacy</p>
-                <p className="policy-text">We do not knowingly collect data from children under 13. If you believe we have, please contact us.</p>
+                <p className="policy-text">We do not knowingly collect data from children under 13. If you believe We have, please contact us.</p>
                 <p className="policy-title">&gt; Third-Party Links</p>
                 <p className="policy-text">We are not responsible for the privacy practices of third-party websites linked from our Service.</p>
                 <p className="policy-title">&gt; Changes to This Policy</p>
