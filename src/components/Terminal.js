@@ -84,8 +84,8 @@ export default function HeadText() {
         <div>
             <div className="Head-Container">
                 <p className="Head-Text">Who Is Nice?</p>
-                <p className="Head-Show"><span className="slash">/</span><span className="blink" onClick={function (event) { toggleImage(); toggleTerminal(); }}>show.terminal_*</span></p>
             </div>
+            <p className="Head-Show"><span className="slash">/</span><span className="blink" onClick={function (event) { toggleImage(); toggleTerminal(); }}>show.terminal_*</span></p>
             <div className="DragDiv">
                 <Draggable>
                     <div className={`Terminal-Container ${showTerminal ? 'show' : ''} ${showImage ? 'show' : ''}`} style={{ zIndex: terminalZIndex }} onClick={toggleTerminalZIndex}>

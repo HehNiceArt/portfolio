@@ -20,9 +20,10 @@
 }
 
 .Head-Show {
-    padding: 10px 50px 10px 50px;
     color: #828282;
+    padding: 10px 50px 10px 50px;
 }
+
 
 .Head-TextContainer {
     display: flex;
