@@ -1,13 +1,13 @@
 import Navbar from '../components/Navbar'
+import TechArt from '../components/TechnicalArt'
 import Footer from '../components/Footer'
-import GameProjects from '../components/GameProjects';
 
-export default function GameProj() {
+export default function TechnicalArt() {
     return (
         <div>
             <Navbar />
-            <GameProjects />
+            <TechArt />
             <Footer />
         </div>
-    );
+    )
 }

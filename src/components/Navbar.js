@@ -41,6 +41,7 @@ function NavigationBar() {
         <nav className='hideOnMobile'><Link className="nav-links" to='/Animation'>Animations</Link></nav>
         <nav className='hideOnMobile'><Link className="nav-links" to='/Live2D'>Live2D Rigs</Link></nav>
         <nav className='hideOnMobile'><Link className="nav-links" to='/GameProjects'>Game Projects</Link></nav>
+        <nav className='hideOnMobile'><Link className="nav-links" to='/TechnicalArt'>Technical Art</Link></nav>
         <nav className='hideOnMobile'><Link className="nav-links" to='/World'>World</Link></nav>
         <nav className='hideOnMobile'><Link className="nav-links" to='/Contact'>Contact</Link></nav>
 
@@ -62,6 +63,7 @@ function NavigationBar() {
           <li className='sidebar-links'><Link to='/Animation'>Animations</Link></li>
           <li className='sidebar-links'><Link to='/Live2D'>Live2D Rigs</Link></li>
           <li className='sidebar-links'><Link to='/GameProjects'>Game Projects</Link></li>
+          <li className='sidebar-links'><Link to='/TechnicalArt'>Technical Art</Link></li>
           <li className='sidebar-links'><Link to='/World'>World</Link></li>
           <li className='sidebar-links'><Link to='/Contact'>Contact</Link></li>
         </ul>
